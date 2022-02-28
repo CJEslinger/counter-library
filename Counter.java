@@ -28,15 +28,9 @@ public class Counter
    //allows user to see their Counter in their consol when they Sys.out.print
    public String toString(String timeType)
    {
-      switch (timeType)
-      {
-         case "military": 
-            return "Military Time: "+Integer.toString(this.hours)+":"+Integer.toString(this.minutes)+" Seconds:"+Integer.toString(this.seconds);
-            break;
-         case "standard":
-            return toStandardTime();  
-            break; 
-      }
+      return "Military Time: "+Integer.toString(this.hours)+":"+Integer.toString(this.minutes)+" Seconds:"+Integer.toString(this.seconds);
+   }
+      
    
    //allows user to see standard time
    private String toStandardTime()
