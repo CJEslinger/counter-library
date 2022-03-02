@@ -18,5 +18,7 @@ For this method you must pass "military" or "standard" as an argurment. If you p
 
 
 increment(String time)
+
 decrement(String time)
+
 The increment both need you to pass an argument of either "seconds", "minutes", or "hours". If you do not pass one of these arguments, you will be thrown an illegal argument exception. When you use the increment() method you will incremnt the argument you passed by +1. If you use the decrement() function, you will decrement the arguemnt you passed by -1.
