@@ -5,7 +5,7 @@ A user can initialize the counter at any real time
 //todo list
 // line 32 modify formatting for military time. It might need a method similar to toStandardTime() Method
 //line 47 there is a variable declared that gets called in the toString() method line 28. I think it will blow up due to it being restricted to the overall method and not just the individual object, so it could change for many objects.
-
+//line 94&113 add exceptions for if argument is not what intended
 public class Counter 
 {   
    private int hours;
@@ -18,11 +18,11 @@ public class Counter
    public Counter(int hours, int minutes, int seconds)
    {
       this.hours = hours;
-      if (this.hours > 24 || this.hours < 0) throw new IllegalArgumentException("hours must be between 0 and 23");
+      if (this.hours >= HOURSPERDAY || this.hours < 0) throw new IllegalArgumentException("hours must be between 0 and 23");
       this.minutes = minutes;
-      if (this.minutes > 60 || this.seconds < 0) throw new IllegalArgumentException("minutes must be between 0 and 60");
+      if (this.minutes >= MINPERHOUR || this.seconds < 0) throw new IllegalArgumentException("minutes must be between 0 and 60");
       this.seconds = seconds;
-      if (this.seconds > 60 || this.seconds < 0) throw new IllegalArgumentException("seconds must be between 0 and 60");
+      if (this.seconds >= SECPERMIN || this.seconds < 0) throw new IllegalArgumentException("seconds must be between 0 and 60");
    }    
    
    public String toString(String timeType)
