@@ -2,15 +2,18 @@
 This class acts as a library which allows users to increment and decrement their counter in a time based format.
 A user can initialize the counter at any real time
 */
+//todo list
+// line 32 modify formatting for military time. It might need a method similar to toStandardTime() Method
+//line 47 there is a variable declared that gets called in the toString() method line 28. I think it will blow up due to it being restricted to the overall method and not just the individual object, so it could change for many objects.
 
 public class Counter 
 {   
    private int hours;
    private int minutes;
    private int seconds;
-   private int secPerMin = 60;
-   private int minPerHour = 60;
-   private int hoursPerDay = 24;
+   private int SECPERMIN = 60;
+   private int MINPERHOUR = 60;
+   private int HOURSPERDAY = 24;
 
    public Counter(int hours, int minutes, int seconds)
    {
@@ -51,19 +54,19 @@ public class Counter
    
    private void logicallyIncrement()
    {
-      if (this.seconds >= secPerMin)
+      if (this.seconds >= SECPERMIN)
       {
          this.minutes++;
          this.seconds = 0;
       }
       
-      if (this.minutes >= minPerHour)
+      if (this.minutes >= MINPERHOUR)
       {
          this.hours++;
          this.minutes = 0;
       }
       
-      if (this.hours >= hoursPerDay)
+      if (this.hours >= HOURSPERDAY)
       {
          this.hours = 0;
       }
