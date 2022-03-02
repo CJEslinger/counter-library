@@ -2,14 +2,16 @@ public class CounterTester
 {
    public static void main(String[] args)
    {
-      Counter clock = new Counter(0,0,-65);
+      Counter[] testCounters;
+      Counter clock = new Counter(23,0,0);
       
       System.out.println("NEW TEST\n\n\n");
       System.out.println(clock.toString("military"));
-      for (int i =0; i<100; i++)
+      for (int i =0; i<3600; i++)
       {
          clock.decrement("seconds");
-         System.out.println(clock.toString());
+         clock.increment("minutes");
+         System.out.println(clock.toString("standard"));
       }      
    }
 }
