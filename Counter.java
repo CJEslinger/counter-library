@@ -4,76 +4,68 @@ A user can initialize the counter at any real time
 */
 
 public class Counter 
-{
-//using private data so the counter can only be incremented and decreamented when using the public functions.
-   
+{   
    private int hours;
    private int minutes;
    private int seconds;
    private int secPerMin = 60;
    private int minPerHour = 60;
    private int hoursPerDay = 24;
-   private int standardHours;
 
-   
-   
    public Counter(int hours, int minutes, int seconds)
    {
       this.hours = hours;
+      if (this.hours > 24 || this.hours < 0) throw new IllegalArgumentException("hours must be between 0 and 23");
       this.minutes = minutes;
+      if (this.minutes > 60 || this.seconds < 0) throw new IllegalArgumentException("minutes must be between 0 and 60");
       this.seconds = seconds;
-      formatInitialization();
+      if (this.seconds > 60 || this.seconds < 0) throw new IllegalArgumentException("seconds must be between 0 and 60");
    }    
    
-   //allows user to see their Counter in their consol when they Sys.out.print
    public String toString(String timeType)
    {
-      return "Military Time: "+Integer.toString(this.hours)+":"+Integer.toString(this.minutes)+" Seconds:"+Integer.toString(this.seconds);
+      if (timeType != "military" && timeType != "standard")throw new IllegalArgumentException("You need to enter the string military or standard as an arguement when using this method");
+      switch (timeType)
+      {
+         case "military": 
+         //need to modify formating for military time
+         return "Military Time: "+Integer.toString(this.hours)+":"+Integer.toString(this.minutes)+" Seconds:"+Integer.toString(this.seconds);
+         
+         case "standard":
+         return toStandardTime(); 
+
+      }
+      return "";   
    }
-      
    
-   //allows user to see standard time
    private String toStandardTime()
    {
-      standardHours = this.hours;
+      //this will likely blow up
+      int standardHours = this.hours;
       if (this.hours > 12)
       {
-         standardHours = this.hours - 12;
-        
-         return "Standard Time: "+Integer.toString(standardHours)+":"+Integer.toString(this.minutes)+" Seconds:"+Integer.toString(this.seconds);
+         standardHours = 0;
       }
-      else
-      {
-      return "Standard Time: "+Integer.toString(this.hours)+":"+Integer.toString(this.minutes)+" Seconds:"+Integer.toString(this.seconds);
-      }
-   }
-     
-   //this method makes sure the clock works
-   private void logicallyIncrementDecrement()
-   {
-      logicallyIncrement();
-      logicallyDecrement();
+      return "Standard Time: "+Integer.toString(standardHours)+":"+Integer.toString(this.minutes)+" Seconds:"+Integer.toString(this.seconds);
    }
    
    private void logicallyIncrement()
    {
       if (this.seconds >= secPerMin)
       {
-         this.minutes = this.seconds/secPerMin;
-         this.seconds = this.seconds%60;
+         this.minutes++;
+         this.seconds = 0;
       }
       
       if (this.minutes >= minPerHour)
       {
-         this.hours = this.minutes/minPerHour;
-         this.minutes = this.minutes%60;
+         this.hours++;
+         this.minutes = 0;
       }
       
-      if (this.hours >= 24)
+      if (this.hours >= hoursPerDay)
       {
          this.hours = 0;
-         this.minutes = 0;
-         this.seconds = 0;
       }
    }
    private void logicallyDecrement()
@@ -81,7 +73,7 @@ public class Counter
       if (this.seconds < 0)
       {
          this.minutes--;
-         this.seconds = secPerMin + this.seconds;
+         this.seconds = 59;
       }
       
       if (minutes < 0)
@@ -92,28 +84,10 @@ public class Counter
       
       if (this.hours < 0)
       {
-         this.hours = hoursPerDay + this.hours%hoursPerDay;
+         this.hours = 23;
       }
    }
    
-   private void formatInitialization()
-   {
-       while (this.seconds >= secPerMin || this.seconds < 0)
-       {
-         logicallyIncrementDecrement();
-       }
-       
-       while (this.minutes >= minPerHour || this.minutes < 0)
-       {
-         logicallyIncrementDecrement();
-       }
-       
-       while (this.hours >= hoursPerDay || this.hours < 0)
-       {
-         logicallyIncrementDecrement();
-       }       
-   }
-   //allows user to increment time by the time they write in the argument
    public void increment(String time)
    {
       switch (time)
@@ -121,7 +95,7 @@ public class Counter
          case "seconds":
          this.seconds++;
          break;
-         
+                
          case "minutes":
          this.minutes++;
          break;
@@ -132,7 +106,7 @@ public class Counter
       }
       logicallyIncrement();  
    }
-   //allows user to decrement time
+   
    public void decrement(String time)
    {
       switch (time)
