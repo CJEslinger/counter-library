@@ -65,7 +65,7 @@ public class Counter
          } 
          else
          {
-            if (doMinuteFormatting()){return "Standard Time: "+Integer.toString(standardHours)+Integer.toString(this.minutes)+":0"+Integer.toString(this.seconds)+ "PM";}
+            if (doMinuteFormatting()){return "Standard Time: "+Integer.toString(standardHours)+":0"+Integer.toString(this.minutes)+":0"+Integer.toString(this.seconds)+ "PM";}
             else {return "Standard Time: "+Integer.toString(standardHours)+":"+Integer.toString(this.minutes)+":"+Integer.toString(this.seconds)+ "PM";}
          }
       }
