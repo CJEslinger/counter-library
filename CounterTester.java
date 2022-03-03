@@ -1,6 +1,7 @@
 /*
    This test stub tests Counter.java to make sure the counter class throws the right exceptions when illegal arguments are passed
    This test class is formated with strings to show exception types, between **NEWTEST** you can comment out code if you want to get rid of tests to clean up your testing space
+   This might need to be broken down into methods so main can be read more easily.
 */
 
 public class CounterTester {
