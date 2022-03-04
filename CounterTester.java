@@ -1,3 +1,4 @@
+import java.util.*;
 /*
    This test stub tests Counter.java to make sure the counter class throws the right exceptions when illegal arguments are passed
    This test class is formated with strings to show exception types, between **NEWTEST** you can comment out code if you want to get rid of tests to clean up your testing space
@@ -17,7 +18,6 @@ public class CounterTester {
 
       System.out.println("ILLEGAL ARGUMENT INITIALIZATION TEST\n");
 //NEW TEST*******************************************************************NEW TEST*******************************************************************
-
       try {
          Counter badClock = new Counter (HOURSTOOHIGH,0,0);
       } catch (IllegalArgumentException e) {
@@ -49,6 +49,7 @@ public class CounterTester {
       } catch (IllegalArgumentException e) {
          System.out.println(e); 
          }
+      
 //NEW TEST*******************************************************************NEW TEST*******************************************************************
       System.out.println("\nINCREMENT/DECREMENT ILLEGAL ARGUMENT TEST\n");        
       try {
@@ -114,7 +115,6 @@ public class CounterTester {
          System.out.println(workingCounter7.toString("standard"));
          System.out.println(workingCounter7.toString("military"));
       }
-//NEW TEST*******************************************************************NEW TEST*******************************************************************
-
+//NEW TEST*******************************************************************NEW TEST*******************************************************************    
    }
 }
