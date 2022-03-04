@@ -1,5 +1,5 @@
 # counter-library
-This counter library was created in java with the jGRASP development envirnment.
+This counter library was created in java version "15.0.2" 2021-01-19 with the jGRASP development environment.
 
 This library allows users to create counter objects that can simulate time clocks when incremented or decremented from.
 
@@ -15,13 +15,14 @@ When creating a Counter object Counter(int hours, int minutes, int seconds), you
 
 toString(String timeType) method
 
-For this method you must pass "military" or "standard" as an argurment. If you pass "military" as the arguement then this method will return a string output of this counter object for military time. If you pass "standard" as an arguement the method will return a reading of this counter object as a string. If you do not pass either of these as arguments you will be thrown an illegal argument exception.
+For this method you must pass "military" or "standard" as an argument. If you pass "military" as the argument then this method will return a string output of this counter object for military time. If you pass "standard" as an argument the method will return a reading of this counter object as a string. If you do not pass either of these as arguments you will be thrown an illegal argument exception.
 
-There are also methods that are private to this class file that properly format the military and standart time string return value. These methods currently have many if else blocks that could be cleaned up. Their function is to format the output properly for those who use the toString method.
+There are also methods that are private to this class file that properly format the military and standard time string return value. These methods currently have many if else blocks that could be cleaned up. Their function is to format the output properly for those who use the toString method.
 
 increment(String time)
 
 decrement(String time)
 
-The increment both need you to pass an argument of either "seconds", "minutes", or "hours". If you do not pass one of these arguments, you will be thrown an illegal argument exception. When you use the increment() method you will incremnt the argument you passed by +1. If you use the decrement() function, you will decrement the arguemnt you passed by -1.
+The increment both need you to pass an argument of either "seconds", "minutes", or "hours". If you do not pass one of these arguments, you will be thrown an illegal argument exception. When you use the increment() method you will increment the argument you passed by +1. If you use the decrement() function, you will decrement the argument you passed by -1.
+
 
