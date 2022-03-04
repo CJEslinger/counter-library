@@ -1,5 +1,7 @@
 # counter-library
-Allows users to create counter objects that can simulate time clocks when incremented or decremented from.
+This counter library was created in java with the jGRASP development envirnment.
+
+This library allows users to create counter objects that can simulate time clocks when incremented or decremented from.
 
 The counter may be initialized to any time, but once initialized can only be incremented or decremented from. The smallest increment should be a second and the largest increment an hour, but ensure the implementation is easy to expand upon and handles for both positive and negative adjustments. Do not include day as part of the counter, in situations where the provided increment would change the day, simply roll over/under the time (similar to a clock). Display output should be made available for both standard and military time.
 
