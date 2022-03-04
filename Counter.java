@@ -4,7 +4,7 @@ A user can initialize the counter at any real time
 */
 //todo list
 //line 56 there is a variable declared that gets called in the toString() method line 28. I think it will blow up due to it being restricted to the overall method and not just the individual object, so it could change for many objects.
-//line 84 & 53 Should likely Clean up the formating methods. Maybe add variables for the time values that are exclusive to the formatting methods and that cannot be accessed by other methods.
+//line 84 & 53 Should likely Clean up the formatting methods. Maybe add variables for the time values that are exclusive to the formatting methods and that cannot be accessed by other methods.
 
 public class Counter 
 {   
