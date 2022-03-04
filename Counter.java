@@ -16,18 +16,18 @@ public class Counter
    private int HOURSPERDAY = 24;
 
    public Counter(int hours, int minutes, int seconds)
-   {
-      this.hours = hours;
-      if (this.hours >= HOURSPERDAY || this.hours < 0) throw new IllegalArgumentException("'hours' argument must be between 0 and 23");
-      this.minutes = minutes;
-      if (this.minutes >= MINPERHOUR || this.minutes < 0) throw new IllegalArgumentException("'minutes' argument must be between 0 and 60");
-      this.seconds = seconds;
-      if (this.seconds >= SECPERMIN || this.seconds < 0) throw new IllegalArgumentException("'seconds' argument must be between 0 and 60");
+   {  
+         this.hours = hours;
+         if (this.hours >= HOURSPERDAY || this.hours < 0) {throw new IllegalArgumentException("'hours' argument must be between 0 and 23");}
+         this.minutes = minutes;
+         if (this.minutes >= MINPERHOUR || this.minutes < 0) {throw new IllegalArgumentException("'minutes' argument must be between 0 and 60");}
+         this.seconds = seconds;
+         if (this.seconds >= SECPERMIN || this.seconds < 0) {throw new IllegalArgumentException("'seconds' argument must be between 0 and 60");}
    }    
    
    public String toString(String timeType)
    {
-      if (timeType != "military" && timeType != "standard")throw new IllegalArgumentException("You need to enter the string military or standard as an arguement when using this method");
+      if (timeType != "military" && timeType != "standard"){throw new IllegalArgumentException("You need to enter the String 'military' or 'standard' as an argument when using this method");}
       switch (timeType)
       {
          case "military": 
@@ -146,7 +146,7 @@ public class Counter
    
    public void increment(String time)
    {
-      if (time != "seconds" && time != "minutes" && time != "hours") throw new IllegalArgumentException("You must pass 'seconds', 'minutes', or 'hours' as and argument.");
+      if (time != "seconds" && time != "minutes" && time != "hours") {throw new IllegalArgumentException("You must pass 'seconds', 'minutes', or 'hours' as and argument.");}
       switch (time)
       {
          case "seconds":
